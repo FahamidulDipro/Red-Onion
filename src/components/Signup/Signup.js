@@ -2,6 +2,13 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 
 const Signup = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const cpassword = event.target.cpassword.value;
+  };
   return (
     <>
       {" "}
@@ -13,11 +20,12 @@ const Signup = () => {
         />
       </div>
       <div className="d-flex justify-content-center  mt-5">
-        <Form className="text-start  w-50">
+        <Form className="text-start  w-50" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Control
               type="text"
               placeholder="Enter Name"
+              name="name"
               className="p-3"
               style={{ background: "lightGrey" }}
             />
@@ -25,6 +33,7 @@ const Signup = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
+              name="email"
               placeholder="Enter email"
               className="p-3"
               style={{ background: "lightGrey" }}
@@ -34,6 +43,7 @@ const Signup = () => {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
               type="password"
+              name="password"
               placeholder="Password"
               className="p-3"
               style={{ background: "lightGrey" }}
@@ -44,6 +54,7 @@ const Signup = () => {
             <Form.Control
               type="password"
               placeholder="Confirm Password"
+              name="cpassword"
               className="p-3"
               style={{ background: "lightGrey" }}
             />
