@@ -4,7 +4,7 @@ import BreakFast from '../BreakFast/BreakFast';
 
 const LoadBreakfast = () => {
   const Foods = useContext(FoodLoad);
-  const [breakfasts] = Foods;
+  const [breakfasts,lunches,dinners] = Foods;
     return (
         <div>
             { 

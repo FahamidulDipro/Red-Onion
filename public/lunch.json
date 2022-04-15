@@ -2,21 +2,21 @@
   {
     "id": "62592ca4eda11e4a3ae92626",
     "picture": "../public/images/lunch/lunch1.png",
-    "name": "Auilar Salazar",
+    "name": "Healthy Meal Plan",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca40130b38fe203c5eb",
     "picture": "../public/images/lunch/lunch2.png",
-    "name": "Tessa Andrews",
+    "name": "Fried Chicken Bento",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca4f56406438964d994",
     "picture": "../public/images/lunch/lunch3.png",
-    "name": "Case Horne",
+    "name": "Tarragon Rubbed Salmon",
     "price": 100,
     "detail": "How we dream about our future"
   },
