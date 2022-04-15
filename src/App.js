@@ -38,6 +38,7 @@ function App() {
         <Navigation></Navigation>
         <FoodNavbar></FoodNavbar>
         <Routes>
+          <Route path="/" element={<LoadBreakfast></LoadBreakfast>}></Route>
           <Route
             path="/breakfast"
             element={<LoadBreakfast></LoadBreakfast>}
