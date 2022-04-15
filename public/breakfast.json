@@ -1,42 +1,42 @@
 [
   {
     "id": "62592ca4eda11e4a3ae92626",
-    "picture": "../public/images/breakfast/breakfast1.png",
+    "picture": "./images/breakfast/breakfast1.png",
     "name": "Bagel and Cream Cheese",
     "price": 6.99,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca40130b38fe203c5eb",
-    "picture": "../public/images/breakfast/breakfast2.png",
+    "picture": "./images/breakfast/breakfast2.png",
     "name": "Breakfast Sandwich",
     "price": 9.99,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca4f56406438964d994",
-    "picture": "../public/images/breakfast/breakfast3.png",
+    "picture": "./images/breakfast/breakfast3.png",
     "name": "Baked Chicken",
     "price": 10.99,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca49bc87c7dc4b5e5bd",
-    "picture": "../public/images/breakfast/breakfast4.png",
+    "picture": "./images/breakfast/breakfast4.png",
     "name": "Eggs Benedict",
     "price": 8.99,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca48cb45bf05f9582b4",
-    "picture": "../public/images/breakfast/breakfast5.png",
+    "picture": "./images/breakfast/breakfast5.png",
     "name": "Toast Croissant Fried Egg",
     "price": 19.99,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca45e39c15745bd4b5e",
-    "picture": "../public/images/breakfast/breakfast6.png",
+    "picture": "./images/breakfast/breakfast6.png",
     "name": "Full Breakfast Fried Egg Toast Brunch",
     "price": 3.99,
     "detail": "How we dream about our future"
