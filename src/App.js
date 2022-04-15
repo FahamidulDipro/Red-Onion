@@ -15,8 +15,21 @@ function App() {
       .then((res) => res.json())
       .then((data) => setBreakfasts(data));
   }, []);
+  const [lunches, setLunches] = useState([]);
+  useEffect(() => {
+    fetch("breakfast.json")
+      .then((res) => res.json())
+      .then((data) => setLunches(data));
+  }, []);
+  const [dinners, setDinners] = useState([]);
+  useEffect(() => {
+    fetch("breakfast.json")
+      .then((res) => res.json())
+      .then((data) => setDinners(data));
+  }, []);
+  const Foods = [breakfasts, lunches, dinners];
   return (
-    <FoodLoad.Provider value={breakfasts}>
+    <FoodLoad.Provider value={Foods}>
       <div className="App">
         <Navigation></Navigation>
         <FoodNavbar></FoodNavbar>

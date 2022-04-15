@@ -3,7 +3,8 @@ import { FoodLoad } from '../../App';
 import BreakFast from '../BreakFast/BreakFast';
 
 const LoadBreakfast = () => {
-  const breakfasts = useContext(FoodLoad);
+  const Foods = useContext(FoodLoad);
+  const [breakfasts] = Foods;
     return (
         <div>
             { 
