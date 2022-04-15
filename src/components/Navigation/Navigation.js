@@ -6,8 +6,8 @@ const Navigation = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand to="#home" className="text-danger fw-bold">
-          Red Onion
+        <Navbar.Brand  >
+          <NavLink  className="text-danger fw-bold text-decoration-none" to={'/'}>Red Onion</NavLink> 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
