@@ -1,42 +1,42 @@
 [
   {
     "id": "62592ca4eda11e4a3ae92626",
-    "picture": "../public/images/lunch/lunch1.png",
+    "picture": "./images/lunch/lunch1.png",
     "name": "Healthy Meal Plan",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca40130b38fe203c5eb",
-    "picture": "../public/images/lunch/lunch2.png",
+    "picture": "./images/lunch/lunch2.png",
     "name": "Fried Chicken Bento",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca4f56406438964d994",
-    "picture": "../public/images/lunch/lunch3.png",
+    "picture": "./images/lunch/lunch3.png",
     "name": "Tarragon Rubbed Salmon",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca49bc87c7dc4b5e5bd",
-    "picture": "../public/images/lunch/lunch4.png",
+    "picture": "./images/lunch/lunch4.png",
     "name": "Indian Lunch",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca48cb45bf05f9582b4",
-    "picture": "../public/images/lunch/lunch5.png",
+    "picture": "./images/lunch/lunch5.png",
     "name": "Beef Steak",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca45e39c15745bd4b5e",
-    "picture": "../public/images/lunch/lunch6.png",
+    "picture": "./images/lunch/lunch6.png",
     "name": "Honey Soy Glazed Salmon with Peppers",
     "price": 100,
     "detail": "How we dream about our future"

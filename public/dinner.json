@@ -1,42 +1,42 @@
 [
   {
     "id": "62592ca4eda11e4a3ae92626",
-    "picture": "../public/images/dinner/dinner1.png",
+    "picture": "./images/dinner/dinner1.png",
     "name": "Salmon with grape fruit and lentil salad",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca40130b38fe203c5eb",
-    "picture": "../public/images/dinner/dinner2.png",
+    "picture": "./images/dinner/dinner2.png",
     "name": "Lemony Salmon Piccata",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca4f56406438964d994",
-    "picture": "../public/images/dinner/dinner3.png",
+    "picture": "./images/dinner/dinner3.png",
     "name": "Pork Tenderloin with Quinoa Pilaf",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca49bc87c7dc4b5e5bd",
-    "picture": "../public/images/dinner/dinner4.png",
+    "picture": "./images/dinner/dinner4.png",
     "name": "French Fries with Cheese",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca48cb45bf05f9582b4",
-    "picture": "../public/images/dinner/dinner5.png",
+    "picture": "./images/dinner/dinner5.png",
     "name": "Garlic Butter Baked Salmon",
     "price": 100,
     "detail": "How we dream about our future"
   },
   {
     "id": "62592ca45e39c15745bd4b5e",
-    "picture": "../public/images/dinner/dinner6.png",
+    "picture": "./images/dinner/dinner6.png",
     "name": "Baked Chicken",
     "price": 100,
     "detail": "How we dream about our future"
