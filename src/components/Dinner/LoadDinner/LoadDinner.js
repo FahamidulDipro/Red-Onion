@@ -8,7 +8,10 @@ const LoadDinner = () => {
 
   return (
     <div>
-      <Container fluid>
+      <Container
+        fluid
+        className="d-flex justify-content-center w-100 border align-items-center"
+      >
         <Row className="container">
           {dinners.map((dinner) => (
             <Dinner key={dinner.id} dinner={dinner}></Dinner>
