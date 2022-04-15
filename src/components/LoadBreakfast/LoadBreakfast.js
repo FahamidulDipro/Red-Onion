@@ -8,7 +8,7 @@ const LoadBreakfast = () => {
   const [breakfasts,lunches,dinners] = Foods;
     return (
         <div>
-            <Container fluid className="d-flex justify-content-center w-100 border align-items-center">
+            <Container fluid className="d-flex justify-content-center w-100 align-items-center">
                 <Row className='container'>
             { 
                 breakfasts.map(breakfast=><BreakFast key={breakfast.id} breakfast={breakfast}></BreakFast>)

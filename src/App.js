@@ -10,6 +10,7 @@ import { createContext, useEffect, useState } from "react";
 import Lunch from "./components/Lunch/Lunch";
 import LoadLunch from "./components/LoadLunch/LoadLunch";
 import LoadDinner from "./components/Dinner/LoadDinner/LoadDinner";
+import Heading from "./components/Heading/Heading";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
@@ -36,7 +37,9 @@ function App() {
     <FoodLoad.Provider value={Foods}>
       <div className="App">
         <Navigation></Navigation>
+        <Heading></Heading>
         <FoodNavbar></FoodNavbar>
+       
         <Routes>
           <Route path="/" element={<LoadBreakfast></LoadBreakfast>}></Route>
           <Route

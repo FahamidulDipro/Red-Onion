@@ -10,7 +10,7 @@ const LoadLunch = () => {
     <div>
       <Container
         fluid
-        className="d-flex justify-content-center w-100 border align-items-center"
+        className="d-flex justify-content-center w-100  align-items-center"
       >
         <Row className="container">
           {lunches.map((lunch) => (

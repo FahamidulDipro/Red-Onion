@@ -20,7 +20,7 @@ const FoodNavbar = () => {
       </Nav.Item>
       <Nav.Item>
         <NavLink to={"/dinner"} className="mx-3 text-decoration-none text-dark">
-          Diner
+          Dinner
         </NavLink>
       </Nav.Item>
     </Nav>
