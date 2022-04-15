@@ -12,6 +12,7 @@ import LoadLunch from "./components/LoadLunch/LoadLunch";
 import LoadDinner from "./components/Dinner/LoadDinner/LoadDinner";
 import Heading from "./components/Heading/Heading";
 import Signup from "./components/Signup/Signup";
+import Login from "./components/Login/Login";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
@@ -38,36 +39,50 @@ function App() {
     <FoodLoad.Provider value={Foods}>
       <div className="App">
         <Navigation></Navigation>
-        
-   
-       
+
         <Routes>
-          <Route path="/" element={<>
-          <Heading></Heading>
-          <FoodNavbar></FoodNavbar> 
-          <LoadBreakfast></LoadBreakfast>
-          </>}></Route>
+          <Route
+            path="/"
+            element={
+              <>
+                <Heading></Heading>
+                <FoodNavbar></FoodNavbar>
+                <LoadBreakfast></LoadBreakfast>
+              </>
+            }
+          ></Route>
           <Route
             path="/breakfast"
-            element={<>
-            <Heading></Heading>
-            <FoodNavbar></FoodNavbar> 
-            <LoadBreakfast></LoadBreakfast>
-            </>}
-            
+            element={
+              <>
+                <Heading></Heading>
+                <FoodNavbar></FoodNavbar>
+                <LoadBreakfast></LoadBreakfast>
+              </>
+            }
           ></Route>
-          <Route path="/lunch" element={<>
-          <Heading></Heading>
-          <FoodNavbar></FoodNavbar> 
-          <LoadLunch></LoadLunch></>}>
-
-          </Route>
-          <Route path="/dinner" element={<>
-          <Heading></Heading>
-          <FoodNavbar></FoodNavbar> 
-          <LoadDinner></LoadDinner>
-          </>}></Route>
+          <Route
+            path="/lunch"
+            element={
+              <>
+                <Heading></Heading>
+                <FoodNavbar></FoodNavbar>
+                <LoadLunch></LoadLunch>
+              </>
+            }
+          ></Route>
+          <Route
+            path="/dinner"
+            element={
+              <>
+                <Heading></Heading>
+                <FoodNavbar></FoodNavbar>
+                <LoadDinner></LoadDinner>
+              </>
+            }
+          ></Route>
           <Route path="/signup" element={<Signup></Signup>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
