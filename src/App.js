@@ -11,6 +11,7 @@ import Lunch from "./components/Lunch/Lunch";
 import LoadLunch from "./components/LoadLunch/LoadLunch";
 import LoadDinner from "./components/Dinner/LoadDinner/LoadDinner";
 import Heading from "./components/Heading/Heading";
+import Signup from "./components/Signup/Signup";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
@@ -37,17 +38,36 @@ function App() {
     <FoodLoad.Provider value={Foods}>
       <div className="App">
         <Navigation></Navigation>
-        <Heading></Heading>
-        <FoodNavbar></FoodNavbar>
+        
+   
        
         <Routes>
-          <Route path="/" element={<LoadBreakfast></LoadBreakfast>}></Route>
+          <Route path="/" element={<>
+          <Heading></Heading>
+          <FoodNavbar></FoodNavbar> 
+          <LoadBreakfast></LoadBreakfast>
+          </>}></Route>
           <Route
             path="/breakfast"
-            element={<LoadBreakfast></LoadBreakfast>}
+            element={<>
+            <Heading></Heading>
+            <FoodNavbar></FoodNavbar> 
+            <LoadBreakfast></LoadBreakfast>
+            </>}
+            
           ></Route>
-          <Route path="/lunch" element={<LoadLunch></LoadLunch>}></Route>
-          <Route path="/dinner" element={<LoadDinner></LoadDinner>}></Route>
+          <Route path="/lunch" element={<>
+          <Heading></Heading>
+          <FoodNavbar></FoodNavbar> 
+          <LoadLunch></LoadLunch></>}>
+
+          </Route>
+          <Route path="/dinner" element={<>
+          <Heading></Heading>
+          <FoodNavbar></FoodNavbar> 
+          <LoadDinner></LoadDinner>
+          </>}></Route>
+          <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
