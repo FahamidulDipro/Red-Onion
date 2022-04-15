@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -6,6 +6,9 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  let errorElement;
+
+  const [passError, setPassError] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -14,8 +17,12 @@ const Signup = () => {
     const cpassword = event.target.cpassword.value;
     password === cpassword
       ? createUserWithEmailAndPassword(email, password)
-      : console.log(error);
+      : setPassError(<p className="text-danger">Password didn't match</p>);
   };
+
+  if (error) {
+    errorElement = <p className="text-danger">{error?.message}</p>;
+  }
   return (
     <>
       {" "}
@@ -37,6 +44,7 @@ const Signup = () => {
               style={{ background: "lightGrey" }}
             />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
@@ -46,6 +54,7 @@ const Signup = () => {
               style={{ background: "lightGrey" }}
             />
           </Form.Group>
+          {errorElement}
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
@@ -66,6 +75,7 @@ const Signup = () => {
               style={{ background: "lightGrey" }}
             />
           </Form.Group>
+          {passError}
 
           <Button
             variant="primary"
