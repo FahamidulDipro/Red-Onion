@@ -1,13 +1,17 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const BreakFast = ({breakfast}) => {
-    const {name,detail,price,picture} = breakfast;
+    const {id,name,detail,price,picture} = breakfast;
+    const navigate = useNavigate();
+    const showId = id=>{
+      navigate(`/detail/${id}`);
+    }
     return (
       <Col lg={4} className='mt-5'>
-        <NavLink to='/detail' className={'text-decoration-none text-dark'}>
-        <Card style={{ width: '18rem' }} className='shadow-lg border-0'>
+ 
+        <Card style={{ width: '18rem' }} className='shadow-lg border-0' onClick={()=>showId(id)}>
         <Card.Img variant="top" src={picture} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -19,7 +23,7 @@ const BreakFast = ({breakfast}) => {
          
         </Card.Body>
       </Card>
-        </NavLink>
+        
         
       </Col>
     );
