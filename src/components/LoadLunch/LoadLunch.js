@@ -16,7 +16,7 @@ const LoadLunch = () => {
           {lunchs?.map((lunch) => (
             <Lunch key={lunch.id} lunch={lunch}></Lunch>
           ))}
-          {console.log(foods)}
+           
         </Row>
       </Container>
     </div>
