@@ -4,8 +4,8 @@ import { FoodLoad } from "../../App";
 import Lunch from "../Lunch/Lunch";
 
 const LoadLunch = () => {
-  const Foods = useContext(FoodLoad);
-  const [breakfasts, lunches, dinners] = Foods;
+  const foods = useContext(FoodLoad);
+  const { lunchs} = foods;
   return (
     <div>
       <Container
@@ -13,10 +13,10 @@ const LoadLunch = () => {
         className="d-flex justify-content-center w-100  align-items-center"
       >
         <Row className="container">
-          {lunches.map((lunch) => (
+          {lunchs?.map((lunch) => (
             <Lunch key={lunch.id} lunch={lunch}></Lunch>
           ))}
-          {console.log(Foods)}
+          {console.log(foods)}
         </Row>
       </Container>
     </div>
