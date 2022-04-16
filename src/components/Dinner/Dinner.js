@@ -1,11 +1,13 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Dinner = ({ dinner }) => {
   const { name, picture, price } = dinner;
   return (
     <Col lg={4} className="mt-5 ">
-      <Card style={{ width: "18rem" }}>
+      <NavLink to='/detail' className={'text-decoration-none text-dark'}>
+      <Card style={{ width: "18rem" }} className='shadow-lg border-0'>
         <Card.Img variant="top" src={picture} />
         <Card.Body>
           <Card.Title>{dinner.name}</Card.Title>
@@ -14,9 +16,11 @@ const Dinner = ({ dinner }) => {
             <b>Price: </b>
             {price}
           </p>
-          <Button variant="primary">Go somewhere</Button>
+         
         </Card.Body>
       </Card>
+      </NavLink>
+     
     </Col>
   );
 };

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="fixed-top">
       <Container>
         <Navbar.Brand  >
           <NavLink  className="text-danger fw-bold text-decoration-none" to={'/'}>Red Onion</NavLink> 
