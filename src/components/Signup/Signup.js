@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Toast } from "react-bootstrap";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { NavLink } from "react-router-dom";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -33,6 +34,20 @@ const Signup = () => {
           className="img-fluid w-25 mt-5"
         />
       </div>
+      {user ? (
+        <Toast className="container">
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Congrats!</strong>
+            <small>1 min ago</small>
+          </Toast.Header>
+          <Toast.Body> your account created</Toast.Body>
+        </Toast>
+      ) : null}
       <div className="d-flex justify-content-center  mt-5">
         <Form className="text-start  w-50" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicName">
@@ -84,6 +99,15 @@ const Signup = () => {
           >
             Signup
           </Button>
+          <div className="text-center mt-2">
+            Already have an account?{" "}
+            <NavLink
+              to="/login"
+              className="text-danger text-decoration-none fw-bold  "
+            >
+              Please Login
+            </NavLink>
+          </div>
         </Form>
       </div>
     </>
