@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
  
 
 const Dinner = ({ dinner }) => {
-  const { id,name, picture, price } = dinner;
+  const { _id,name, picture, price } = dinner;
   const navigate = useNavigate();
     const showId = id=>{
       navigate(`/detail/${id}`);
@@ -12,7 +12,7 @@ const Dinner = ({ dinner }) => {
   return (
     <Col lg={4} className="mt-5 ">
       
-      <Card style={{ width: "18rem" }} className='shadow-lg border-0' onClick={()=>showId(id)}>
+      <Card style={{ width: "18rem" }} className='shadow-lg border-0' onClick={()=>showId(_id)}>
         <Card.Img variant="top" src={picture} />
         <Card.Body>
           <Card.Title>{dinner.name}</Card.Title>

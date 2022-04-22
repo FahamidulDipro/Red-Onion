@@ -7,18 +7,19 @@ const Detail = () => {
   const { foodId } = useParams();
 
   const foods = useContext(FoodLoad);
-  const { breakfasts, lunchs, dinners } = foods;
+  const { breakfasts, lunches, dinners } = foods;
   const breakFastDetail = breakfasts?.find(
-    (breakfast) => breakfast.id === foodId
+    (breakfast) => breakfast._id === foodId
   );
-  const lunchDetail = lunchs?.find((lunch) => lunch.id === foodId);
-  const dinnerDetail = dinners?.find((dinner) => dinner.id === foodId);
+  const lunchDetail = lunches?.find((lunch) => lunch._id === foodId);
+  const dinnerDetail = dinners?.find((dinner) => dinner._id === foodId);
 
   return (
     <div
       className="container d-flex justify-content-between "
       style={{ marginTop: "200px" }}
     >
+      {console.log(foodId)}
       <div className="w-50 mt-5 text-start">
         <h1>
           {breakFastDetail?.name || lunchDetail?.name || dinnerDetail?.name}
