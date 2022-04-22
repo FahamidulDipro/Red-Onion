@@ -14,17 +14,17 @@ import Login from "./components/Login/Login";
 import Detail from "./components/Detail/Detail";
 export const FoodLoad = createContext();
 function App() {
-  const [foods, setFoods] = useState([]);
+  const [breakfasts, setBreakfasts] = useState([]);
   useEffect(() => {
-    fetch("foods.json")
+    fetch("http://localhost:5000/breakfasts")
       .then((res) => res.json())
-      .then((data) => setFoods(data));
+      .then((data) => setBreakfasts(data));
   }, []);
 
   //Creating Context
 
   return (
-    <FoodLoad.Provider value={foods}>
+    <FoodLoad.Provider value={breakfasts}>
       <div className="App">
         <Navigation></Navigation>
 

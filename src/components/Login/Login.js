@@ -29,11 +29,11 @@ const Login = () => {
     return (
         <>
         {" "}
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center" style={{marginTop:'150px'}}>
           <img
             src="./images/logo2.png"
             alt="logo"
-            className="img-fluid w-25 mt-5"
+            className="img-fluid w-25 "
           />
         </div>
         {user ? (
