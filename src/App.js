@@ -15,16 +15,30 @@ import Detail from "./components/Detail/Detail";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
+  const [lunches, setLunches] = useState([]);
+  const [dinners, setDinners] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5000/breakfasts")
       .then((res) => res.json())
       .then((data) => setBreakfasts(data));
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/lunches")
+      .then((res) => res.json())
+      .then((data) => setLunches(data));
+  }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/dinners")
+      .then((res) => res.json())
+      .then((data) => setDinners(data));
+  }, []);
+  const allFoods = { breakfasts, lunches, dinners };
   //Creating Context
 
   return (
-    <FoodLoad.Provider value={breakfasts}>
+    <FoodLoad.Provider value={allFoods}>
       <div className="App">
         <Navigation></Navigation>
 

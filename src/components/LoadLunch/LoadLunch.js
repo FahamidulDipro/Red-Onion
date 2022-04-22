@@ -4,8 +4,8 @@ import { FoodLoad } from "../../App";
 import Lunch from "../Lunch/Lunch";
 
 const LoadLunch = () => {
-  const foods = useContext(FoodLoad);
-  const { lunchs} = foods;
+  const {lunches} = useContext(FoodLoad);
+  // const { lunchs} = foods;
   return (
     <div>
       <Container
@@ -13,8 +13,8 @@ const LoadLunch = () => {
         className="d-flex justify-content-center w-100  align-items-center"
       >
         <Row className="container">
-          {lunchs?.map((lunch) => (
-            <Lunch key={lunch.id} lunch={lunch}></Lunch>
+          {lunches?.map((lunch) => (
+            <Lunch key={lunch._id} lunch={lunch}></Lunch>
           ))}
            
         </Row>

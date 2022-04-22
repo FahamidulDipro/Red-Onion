@@ -4,8 +4,8 @@ import { FoodLoad } from "../../../App";
 import Dinner from "../Dinner";
 
 const LoadDinner = () => {
-  const foods = useContext(FoodLoad);
-  const {dinners} = foods;
+  const {dinners} = useContext(FoodLoad);
+ 
 
   return (
     <div>
@@ -15,7 +15,7 @@ const LoadDinner = () => {
       >
         <Row className="container">
           {dinners?.map((dinner) => (
-            <Dinner key={dinner.id} dinner={dinner}></Dinner>
+            <Dinner key={dinner._id} dinner={dinner}></Dinner>
           ))}
         </Row>
       </Container>
