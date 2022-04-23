@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { FoodLoad } from "../../App";
+import { TrashIcon } from "@heroicons/react/solid";
 
 const Detail = () => {
   const { foodId } = useParams();
@@ -13,7 +14,9 @@ const Detail = () => {
   );
   const lunchDetail = lunches?.find((lunch) => lunch._id === foodId);
   const dinnerDetail = dinners?.find((dinner) => dinner._id === foodId);
-
+  const handleDelete = (id) => {
+    console.log(id);
+  };
   return (
     <section className="d-flex justify-content-center align-items-center">
       <div
@@ -52,13 +55,16 @@ const Detail = () => {
           >
             Add
           </Button>
-          <Button
-            variant="danger"
-            className="px-5 rounded-pill mt-3 "
-            style={{ fontSize: "20px" }}
-          >
-            Remove From Cart
-          </Button>
+
+          <TrashIcon
+            style={{
+              width: "40px",
+              color: "red",
+              marginTop: "10px",
+              cursor: "pointer",
+            }}
+            onClick={() => handleDelete(foodId)}
+          />
         </div>
         <div className="w-50 order-sm-0 order-0 order-lg-3 order-md-3">
           <img
