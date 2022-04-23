@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/Navigation/Navigation";
 import FoodNavbar from "./components/FoodNavbar/FoodNavbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import LoadBreakfast from "./components/LoadBreakfast/LoadBreakfast";
 import NotFound from "./components/NotFound/NotFound";
 import { createContext, useEffect, useState } from "react";
@@ -18,11 +18,20 @@ function App() {
   const [breakfasts, setBreakfasts] = useState([]);
   const [lunches, setLunches] = useState([]);
   const [dinners, setDinners] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
     fetch("http://localhost:5000/breakfasts")
       .then((res) => res.json())
-      .then((data) => setBreakfasts(data));
+      .then((data) => {
+        if (location) {
+          const remainingBreakfasts = breakfasts.filter(
+            (breakfast) => breakfast._id !== location.state.id
+          );
+          setBreakfasts(remainingBreakfasts);
+        }
+
+        setBreakfasts(data);
+      });
   }, []);
 
   useEffect(() => {
@@ -41,6 +50,7 @@ function App() {
   return (
     <FoodLoad.Provider value={allFoods}>
       <div className="App">
+        {console.log(location?.state?.id)}
         <Navigation></Navigation>
 
         <Routes>

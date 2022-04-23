@@ -1,21 +1,37 @@
 import React, { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FoodLoad } from "../../App";
 import { TrashIcon, PlusSmIcon, MinusSmIcon } from "@heroicons/react/solid";
 
 const Detail = () => {
   const { foodId } = useParams();
+  const navigate = useNavigate();
 
   const foods = useContext(FoodLoad);
   const { breakfasts, lunches, dinners } = foods;
+  const [remainingFoods, setRemainingFoods] = useState([]);
   const breakFastDetail = breakfasts?.find(
     (breakfast) => breakfast._id === foodId
   );
   const lunchDetail = lunches?.find((lunch) => lunch._id === foodId);
   const dinnerDetail = dinners?.find((dinner) => dinner._id === foodId);
   const handleDelete = (id) => {
-    console.log(id);
+    const proceed = window.confirm("Are you sure you want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/delete/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          navigate("/", {
+            state: {
+              id: foodId,
+            },
+          });
+          console.log("Deleted Item", data);
+        });
+    }
   };
   const [count, setCount] = useState(0);
   const addCount = () => {
