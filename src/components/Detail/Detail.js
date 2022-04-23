@@ -15,56 +15,64 @@ const Detail = () => {
   const dinnerDetail = dinners?.find((dinner) => dinner._id === foodId);
 
   return (
-    <div
-      className="container d-flex justify-content-between "
-      style={{ marginTop: "200px" }}
-    >
-      {console.log(foodId)}
-      <div className="w-50 mt-5 text-start">
-        <h1>
-          {breakFastDetail?.name || lunchDetail?.name || dinnerDetail?.name}
-        </h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-          expedita. Veniam quibusdam officiis labore aperiam, est, aliquid
-          doloremque tenetur architecto beatae at iste nisi repellendus ut in
-          sapiente voluptas facilis?
-        </p>
-        <p style={{ fontSize: "35px" }}>
-          <b>
-            {" "}
-            $
-            {breakFastDetail?.price ||
-              lunchDetail?.price ||
-              dinnerDetail?.price}
-          </b>
-          <input
-            type="text"
-            name=""
-            id=""
-            className="mx-3 rounded-pill p-2 w-25"
+    <section className="d-flex justify-content-center align-items-center">
+      <div
+        className="container d-flex justify-content-around flex-lg-row flex-md-row flex-sm-column flex-column  w-75"
+        style={{ marginTop: "200px" }}
+      >
+        {console.log(foodId)}
+        <div className="w-100 mt-5 text-start order-1">
+          <h1>
+            {breakFastDetail?.name || lunchDetail?.name || dinnerDetail?.name}
+          </h1>
+          <p>
+            {breakFastDetail?.detail ||
+              lunchDetail?.detail ||
+              dinnerDetail?.detail}
+          </p>
+          <p style={{ fontSize: "35px" }}>
+            <b>
+              {" "}
+              $
+              {breakFastDetail?.price ||
+                lunchDetail?.price ||
+                dinnerDetail?.price}
+            </b>
+            <input
+              type="text"
+              name=""
+              id=""
+              className="mx-3 rounded-pill p-2 w-25"
+            />
+          </p>
+          <Button
+            variant="danger"
+            className="px-5 rounded-pill  mt-3 me-3"
+            style={{ fontSize: "20px" }}
+          >
+            Add
+          </Button>
+          <Button
+            variant="danger"
+            className="px-5 rounded-pill mt-3 "
+            style={{ fontSize: "20px" }}
+          >
+            Remove From Cart
+          </Button>
+        </div>
+        <div className="w-50 order-sm-0 order-0 order-lg-3 order-md-3">
+          <img
+            src={
+              breakFastDetail?.picture ||
+              lunchDetail?.picture ||
+              dinnerDetail?.picture
+            }
+            alt="foodPic"
+            className="img-fluid"
           />
-        </p>
-        <Button
-          variant="danger"
-          className="px-5 rounded-pill"
-          style={{ fontSize: "25px" }}
-        >
-          Add
-        </Button>
+        </div>
       </div>
-      <div className="w-50">
-        <img
-          src={
-            breakFastDetail?.picture ||
-            lunchDetail?.picture ||
-            dinnerDetail?.picture
-          }
-          alt="foodPic"
-          className="img-fluid"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 
