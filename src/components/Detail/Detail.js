@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { FoodLoad } from "../../App";
-import { TrashIcon } from "@heroicons/react/solid";
+import { TrashIcon, PlusSmIcon, MinusSmIcon } from "@heroicons/react/solid";
 
 const Detail = () => {
   const { foodId } = useParams();
@@ -17,13 +17,19 @@ const Detail = () => {
   const handleDelete = (id) => {
     console.log(id);
   };
+  const [count, setCount] = useState(0);
+  const addCount = () => {
+    setCount(count + 1);
+  };
+  const removeCount = () => {
+    if (count > 0) setCount(count - 1);
+  };
   return (
     <section className="d-flex justify-content-center align-items-center">
       <div
         className="container d-flex justify-content-around flex-lg-row flex-md-row flex-sm-column flex-column  w-75"
         style={{ marginTop: "200px" }}
       >
-        {console.log(foodId)}
         <div className="w-100 mt-5 text-start order-1">
           <h1>
             {breakFastDetail?.name || lunchDetail?.name || dinnerDetail?.name}
@@ -33,7 +39,7 @@ const Detail = () => {
               lunchDetail?.detail ||
               dinnerDetail?.detail}
           </p>
-          <p style={{ fontSize: "35px" }}>
+          <p style={{ fontSize: "30px" }} className="d-flex ">
             <b>
               {" "}
               $
@@ -41,12 +47,30 @@ const Detail = () => {
                 lunchDetail?.price ||
                 dinnerDetail?.price}
             </b>
-            <input
-              type="text"
-              name=""
-              id=""
-              className="mx-3 rounded-pill p-2 w-25"
-            />
+            <span
+              className="d-flex justify-content-around border rounded-pill border-dark ms-3"
+              style={{ width: "150px" }}
+            >
+              <MinusSmIcon
+                style={{
+                  width: "40px",
+                  color: "grey",
+                  marginTop: "10px",
+                  cursor: "pointer",
+                }}
+                onClick={removeCount}
+              ></MinusSmIcon>
+              {count}
+              <PlusSmIcon
+                style={{
+                  width: "40px",
+                  marginTop: "10px",
+                  cursor: "pointer",
+                }}
+                className="text-danger"
+                onClick={addCount}
+              ></PlusSmIcon>
+            </span>
           </p>
           <Button
             variant="danger"
