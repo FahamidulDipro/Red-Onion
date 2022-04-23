@@ -12,6 +12,7 @@ import Heading from "./components/Heading/Heading";
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
 import Detail from "./components/Detail/Detail";
+import AddItems from "./components/AddItems/AddItems";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
@@ -86,6 +87,7 @@ function App() {
           <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/detail/:foodId" element={<Detail></Detail>}></Route>
+          <Route path="/additems" element={<AddItems></AddItems>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>

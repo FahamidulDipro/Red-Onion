@@ -13,6 +13,7 @@ const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
+            <NavLink to="/additems" className='text-secondary mx-3 text-decoration-none fw-bold mt-1'>Add Item</NavLink>
             <NavLink to="/cart" className='text-secondary mx-3 text-decoration-none fw-bold mt-1'>Cart</NavLink>
             <NavLink to="/login"  className='text-secondary mx-3 text-decoration-none fw-bold mt-1'>Login</NavLink>
           
