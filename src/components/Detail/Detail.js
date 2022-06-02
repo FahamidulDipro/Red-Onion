@@ -3,14 +3,16 @@ import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { FoodLoad } from "../../App";
 import { TrashIcon, PlusSmIcon, MinusSmIcon } from "@heroicons/react/solid";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Detail = () => {
   const { foodId } = useParams();
   const navigate = useNavigate();
-
+  const [user] = useAuthState(auth);
   const foods = useContext(FoodLoad);
   const { breakfasts, lunches, dinners } = foods;
- 
+
   const breakFastDetail = breakfasts?.find(
     (breakfast) => breakfast._id === foodId
   );
@@ -35,12 +37,30 @@ const Detail = () => {
         });
     }
   };
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const addCount = () => {
     setCount(count + 1);
   };
   const removeCount = () => {
     if (count > 0) setCount(count - 1);
+  };
+  const addToCartHandler = () => {
+    const cartInfo = {
+      foodName:
+        breakFastDetail?.name || lunchDetail?.name || dinnerDetail?.name,
+      price:
+        breakFastDetail?.price || lunchDetail?.price || dinnerDetail?.price,
+      quantity: count,
+    };
+    fetch(`http://localhost:5000/cart/${user?.email}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <section className="d-flex justify-content-center align-items-center">
@@ -94,6 +114,7 @@ const Detail = () => {
             variant="danger"
             className="px-5 rounded-pill  mt-3 me-3"
             style={{ fontSize: "20px" }}
+            onClick={addToCartHandler}
           >
             Add
           </Button>
