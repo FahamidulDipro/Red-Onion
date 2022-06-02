@@ -11,7 +11,7 @@ const AddItems = () => {
   } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    fetch("https://boiling-tor-09845.herokuapp.com/additems", {
+    fetch("http://localhost:5000 /additems", {
       method: "POST",
       headers: {
         "content-type": "application/json",

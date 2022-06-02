@@ -21,7 +21,7 @@ const Detail = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`https://boiling-tor-09845.herokuapp.com/delete/${id}`, {
+      fetch(`http://localhost:5000 /delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

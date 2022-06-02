@@ -21,7 +21,7 @@ function App() {
   const [dinners, setDinners] = useState([]);
   const location = useLocation();
   useEffect(() => {
-    fetch(`https://boiling-tor-09845.herokuapp.com/breakfasts`)
+    fetch(`http://localhost:5000/breakfasts`)
       .then((res) => res.json())
       .then((data) => {
         setBreakfasts(data);
@@ -29,12 +29,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("https://boiling-tor-09845.herokuapp.com/lunches")
+    fetch("http://localhost:5000/lunches")
       .then((res) => res.json())
       .then((data) => setLunches(data));
   }, []);
   useEffect(() => {
-    fetch("https://boiling-tor-09845.herokuapp.com/dinners")
+    fetch("http://localhost:5000/dinners")
       .then((res) => res.json())
       .then((data) => setDinners(data));
   }, []);
