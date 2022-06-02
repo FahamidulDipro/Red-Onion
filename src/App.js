@@ -13,6 +13,7 @@ import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
 import Detail from "./components/Detail/Detail";
 import AddItems from "./components/AddItems/AddItems";
+import Cart from "./components/Cart/Cart";
 export const FoodLoad = createContext();
 function App() {
   const [breakfasts, setBreakfasts] = useState([]);
@@ -20,27 +21,20 @@ function App() {
   const [dinners, setDinners] = useState([]);
   const location = useLocation();
   useEffect(() => {
-    fetch("http://localhost:5000/breakfasts")
+    fetch(`https://boiling-tor-09845.herokuapp.com/breakfasts`)
       .then((res) => res.json())
       .then((data) => {
-        if (location) {
-          const remainingBreakfasts = breakfasts.filter(
-            (breakfast) => breakfast._id !== location.state.id
-          );
-          setBreakfasts(remainingBreakfasts);
-        }
-
         setBreakfasts(data);
       });
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/lunches")
+    fetch("https://boiling-tor-09845.herokuapp.com/lunches")
       .then((res) => res.json())
       .then((data) => setLunches(data));
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/dinners")
+    fetch("https://boiling-tor-09845.herokuapp.com/dinners")
       .then((res) => res.json())
       .then((data) => setDinners(data));
   }, []);
@@ -98,6 +92,7 @@ function App() {
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/detail/:foodId" element={<Detail></Detail>}></Route>
           <Route path="/additems" element={<AddItems></AddItems>}></Route>
+          <Route path="/cart" element={<Cart></Cart>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>

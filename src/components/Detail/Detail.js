@@ -10,7 +10,7 @@ const Detail = () => {
 
   const foods = useContext(FoodLoad);
   const { breakfasts, lunches, dinners } = foods;
-  const [remainingFoods, setRemainingFoods] = useState([]);
+ 
   const breakFastDetail = breakfasts?.find(
     (breakfast) => breakfast._id === foodId
   );
@@ -19,7 +19,7 @@ const Detail = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://boiling-tor-09845.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -30,6 +30,8 @@ const Detail = () => {
             },
           });
           console.log("Deleted Item", data);
+
+          window.location.reload();
         });
     }
   };

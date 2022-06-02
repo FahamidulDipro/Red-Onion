@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const AddItems = () => {
   const {
@@ -8,8 +9,9 @@ const AddItems = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/additems", {
+    fetch("https://boiling-tor-09845.herokuapp.com/additems", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -17,7 +19,11 @@ const AddItems = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        console.log(result);
+        navigate("/");
+        window.location.reload();
+      });
   };
   return (
     <div style={{ marginTop: "100px" }}>

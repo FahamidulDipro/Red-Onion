@@ -9,12 +9,12 @@ const BreakFast = ({breakfast}) => {
       navigate(`/detail/${id}`);
     }
     return (
-      <Col lg={4} className='mt-5'>
+      <Col lg={4} className='my-5'>
  
         <Card style={{ width: '18rem' }} className='shadow-lg border-0' onClick={()=>showId(_id)}>
         <Card.Img variant="top" src={picture} />
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Title className='text-primary'>{name}</Card.Title>
           <Card.Text>
             {detail}
           

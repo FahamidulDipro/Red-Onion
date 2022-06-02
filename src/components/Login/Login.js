@@ -3,6 +3,7 @@ import { Button, Form, Toast } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { NavLink } from "react-router-dom";
+import SocialLogin from '../../SocialLogin/SocialLogin';
 
 //Login with email and password hook
 const Login = () => {
@@ -88,6 +89,7 @@ const Login = () => {
               Login
             </Button>
             <div className='text-center mt-2'>Don't have an account? <NavLink to='/signup' className='text-danger text-decoration-none fw-bold  '>Please Register</NavLink></div>
+            <SocialLogin></SocialLogin>
           </Form>
         </div>
       </>
